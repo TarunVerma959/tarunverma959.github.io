@@ -57,7 +57,7 @@ Joined AppQuell as a frontend developer, working on website layouts and user int
 
 ### Chegg India — Freelance
 #### Subject Matter Expert — Feb 2021 – May 2022
-Answered student questions as a freelance subject matter expert on Chegg.
+Provided detailed, step-by-step solutions to student questions as a freelance Subject Matter Expert on Chegg.
 
 ---
 
@@ -70,7 +70,7 @@ A bankruptcy case-management platform that brings questionnaires, document colle
 - OCR document extraction that autofills questionnaire sections from uploaded financial PDFs
 - Petition preparation, attorney–client chat and text messaging
 - Plaid imports, credit report imports, paystub management
-- Case data imports for Jubilee and official form generation using PDFtk
+- Case data exports to Jubilee and official form generation using PDFtk
 
 *Tech: Laravel, PHP, MySQL, JavaScript, HTML, CSS, REST APIs, Plaid API, PDFtk*
 
@@ -85,7 +85,7 @@ Bankruptcy case-management platform used by law firms for client intake and case
 - Document collection and upload flows, document progress and review
 - Paystub and paycheck calculation features for attorneys
 - PDF generation and processing with PDFtk — official and local court forms, combined PDFs
-- Case data imports for Jubilee and Best Case bankruptcy software from BK Questionnaire
+- Case data exports to Jubilee and Best Case bankruptcy software from BK Questionnaire
 - API integrations: Plaid API (bank account/transaction import), Laravel Passport APIs, third-party APIs
 - Client intake forms and one-page questionnaires, document scanning/OCR tools, Excel/CSV imports, ZIP downloads
 - Email notifications, admin/concierge management, credit reports and bank statements
@@ -102,9 +102,22 @@ Client websites and web applications built with WordPress, Laravel and React.js.
 
 ---
 
+## Personal Projects
+
+### Passbook — Personal Finance Tracker (Android)
+Native Android app in Kotlin + Jetpack Compose (Material 3) for tracking credits and debits: 6-digit PIN + fingerprint lock, entries with search/filters, categories and accounts, recurring templates, monthly summaries, CSV/PDF export, JSON backup/restore, and Firebase Realtime Database sync.
+*Tech: Kotlin, Jetpack Compose, Material 3, Firebase, Android*
+
+### Passport Photo PDF — Photo to Print-Ready PDF
+Take or upload a photo, edit it (crop, zoom, rotate, straighten, flip), choose a passport photo size (35×45 mm, 2×2 in, custom) and paper size (A4, US Letter, 4×6), and download a 300 DPI print-ready PDF with 1–500 copies. One React + TypeScript codebase runs as a website / installable PWA and as Android & iOS apps via Capacitor.
+*Tech: React, TypeScript, Vite, Capacitor, PWA, jsPDF*
+
+---
+
 ## Education
 
 **Punjab Technical University** — B.Tech, Computer Science · 2015 – 2019 · 7.59 CGPA  
+**MAAC Chandigarh** — Digital Art & Film Making (Training, 1.5 Years) · 2018 – Dec 2020 · Photoshop Designing, Game Designing, 3D Modelling, Motion Graphics, Texturing  
 **Govt. Model Sr. Secondary School** — 12th, Non-Medical · 2014 – 2015  
 **Sant Isher Singh Public School** — 10th · 2012 – 2013
 
@@ -112,7 +125,7 @@ Client websites and web applications built with WordPress, Laravel and React.js.
 
 ## Certifications
 
-Game Designing — MAAC · Web Designing — Technospecs · Android Technology — CS Soft Solutions
+Digital Art and Film Making — MAAC Chandigarh · Android Technology — CS Soft Solutions · Web Designing — Technospecs
 
 ## Languages
 
