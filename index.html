@@ -1,354 +1,199 @@
 <!DOCTYPE html>
+<!-- OPTION B: Two-column sidebar layout — like a real resume / CV page -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tarun Verma — Full Stack Developer</title>
-<meta name="description" content="Tarun Verma — Full Stack Developer. Laravel, PHP, React.js, WordPress, MySQL. Based in Kharar, Punjab, India.">
+<title>Tarun Verma — Option B: Sidebar Resume</title>
 <style>
-/* ── Reset & base ── */
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:#0a0f1e;color:#e2e8f0;line-height:1.7}
-a{color:#38bdf8;text-decoration:none}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.65;min-height:100vh}
+a{color:#3b82f6;text-decoration:none}
 a:hover{text-decoration:underline}
 
-/* ── Navbar ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,30,.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.07);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-weight:700;font-size:1rem;color:#fff;letter-spacing:.3px}
-.nav-links{display:flex;gap:24px;list-style:none}
-.nav-links a{color:#94a3b8;font-size:.9rem;font-weight:500;transition:color .2s}
-.nav-links a:hover{color:#fff;text-decoration:none}
+.page{max-width:1080px;margin:40px auto;display:grid;grid-template-columns:300px 1fr;min-height:80vh;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
 
-/* ── Hero ── */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;background:radial-gradient(ellipse 120% 80% at 50% -10%, rgba(14,116,144,.25) 0%, transparent 60%), radial-gradient(ellipse 80% 60% at 80% 80%, rgba(30,58,138,.2) 0%, transparent 60%), #0a0f1e;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(56,189,248,.07) 1px, transparent 1px);background-size:40px 40px;pointer-events:none}
-.hero-badge{display:inline-block;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.3);color:#38bdf8;font-size:.82rem;font-weight:600;padding:5px 14px;border-radius:999px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase}
-.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1.15;color:#fff;margin-bottom:14px;letter-spacing:-.5px}
-.hero h1 span{background:linear-gradient(90deg,#38bdf8,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.1rem;color:#94a3b8;max-width:560px;margin:0 auto 10px}
-.hero-stack{font-size:.95rem;color:#64748b;margin-bottom:28px}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:linear-gradient(135deg,#0ea5e9,#6366f1);color:#fff;padding:11px 26px;border-radius:8px;font-weight:600;font-size:.95rem;border:0;cursor:pointer;transition:opacity .2s;display:inline-block}
-.btn-primary:hover{opacity:.88;text-decoration:none}
-.btn-outline{background:transparent;color:#e2e8f0;padding:10px 24px;border-radius:8px;font-weight:600;font-size:.95rem;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:border-color .2s,color .2s;display:inline-block}
-.btn-outline:hover{border-color:#38bdf8;color:#38bdf8;text-decoration:none}
-.scroll-hint{margin-top:48px;color:#334155;font-size:.82rem;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+/* Sidebar */
+aside{background:linear-gradient(160deg,#1e3a8a 0%,#1e40af 60%,#1d4ed8 100%);color:#fff;padding:44px 28px}
+.av{width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:16px;border:3px solid rgba(255,255,255,.3)}
+aside h1{font-size:1.4rem;font-weight:800;margin-bottom:4px}
+aside .role{font-size:.88rem;opacity:.85;font-weight:500;margin-bottom:20px;line-height:1.4}
+.aside-sec{margin-top:28px}
+.aside-sec h3{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.6;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:6px}
+.aside-link{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:.88rem;margin-bottom:8px}
+.aside-link:hover{color:#fff;text-decoration:none}
+.aside-link .ico{width:18px;opacity:.7;text-align:center;font-size:.85rem}
+.sk-pill{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:5px 12px;border-radius:6px;font-size:.82rem;font-weight:600;margin:3px 3px 0 0}
+.lang-item{font-size:.87rem;color:rgba(255,255,255,.8);margin-bottom:6px}
+.lang-level{font-size:.75rem;color:rgba(255,255,255,.5);display:block}
+.avail-badge{margin-top:28px;background:rgba(34,197,94,.2);border:1px solid rgba(34,197,94,.4);color:#86efac;padding:10px 14px;border-radius:8px;font-size:.82rem;text-align:center;font-weight:600}
 
-/* ── Layout ── */
-.container{max-width:900px;margin:0 auto;padding:0 24px}
-section.sec{padding:80px 0}
-.sec-label{font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#38bdf8;margin-bottom:10px}
-.sec-title{font-size:1.9rem;font-weight:800;color:#fff;margin-bottom:40px}
-hr.divider{border:0;border-top:1px solid rgba(255,255,255,.07);margin:0}
+/* Main */
+main{background:#fff;padding:44px 40px;overflow:auto}
+.main-sec{margin-bottom:40px}
+.main-sec:last-child{margin-bottom:0}
+.ms-label{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3b82f6;margin-bottom:6px}
+.ms-title{font-size:1.3rem;font-weight:800;color:#0f172a;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #f1f5f9}
 
-/* ── About ── */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-.about-text{font-size:1rem;color:#94a3b8;line-height:1.8}
-.about-text p+p{margin-top:12px}
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.skill-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 14px;font-size:.88rem;color:#cbd5e1;display:flex;align-items:center;gap:8px}
-.skill-item::before{content:'';width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#818cf8);flex-shrink:0}
+/* Hero intro */
+.hero-intro{font-size:.98rem;color:#475569;line-height:1.8;margin-bottom:0}
 
-/* ── Experience timeline ── */
-.timeline{position:relative;padding-left:28px}
-.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#38bdf8,#818cf8,rgba(255,255,255,.05))}
-.tl-item{position:relative;margin-bottom:40px}
-.tl-item:last-child{margin-bottom:0}
-.tl-dot{position:absolute;left:-35px;top:5px;width:14px;height:14px;border-radius:50%;background:#0a0f1e;border:2px solid #38bdf8;box-shadow:0 0 8px rgba(56,189,248,.4)}
-.tl-company{font-size:.8rem;font-weight:600;color:#38bdf8;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
-.tl-role{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:4px}
-.tl-date{font-size:.85rem;color:#475569;margin-bottom:12px}
-.tl-list{list-style:none;padding:0}
-.tl-list li{color:#94a3b8;font-size:.92rem;padding:3px 0 3px 16px;position:relative}
-.tl-list li::before{content:'→';position:absolute;left:0;color:#38bdf8;font-size:.8rem}
-.tl-tech{margin-top:10px;font-size:.82rem;color:#475569;font-style:italic}
+/* Timeline */
+.tl{position:relative;padding-left:20px}
+.tl::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:2px;background:#e2e8f0}
+.tl-item{position:relative;margin-bottom:28px}
+.tl-item::before{content:'';position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;background:#3b82f6;border:2px solid #fff;box-shadow:0 0 0 2px #dbeafe}
+.tl-co{font-size:.75rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#3b82f6}
+.tl-role{font-size:1rem;font-weight:700;color:#0f172a;margin:2px 0 2px}
+.tl-date{font-size:.82rem;color:#94a3b8;margin-bottom:8px}
+.tl-list{list-style:none}
+.tl-list li{font-size:.88rem;color:#475569;padding:2px 0 2px 12px;position:relative}
+.tl-list li::before{content:'→';position:absolute;left:0;color:#3b82f6;font-size:.75rem;line-height:1.6}
+.tl-tech{font-size:.8rem;color:#94a3b8;margin-top:6px;font-style:italic}
 
-/* ── Projects ── */
-.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.proj-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:22px;transition:border-color .25s,transform .25s,background .25s}
-.proj-card:hover{border-color:rgba(56,189,248,.35);transform:translateY(-3px);background:rgba(56,189,248,.04)}
-.proj-year{font-size:.78rem;font-weight:600;color:#38bdf8;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
-.proj-name{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
-.proj-desc{font-size:.88rem;color:#64748b;line-height:1.65;margin-bottom:12px}
-.proj-tags{display:flex;flex-wrap:wrap;gap:6px}
-.proj-tag{background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.18);color:#7dd3fc;padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:600}
+/* Project cards */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.proj-card{border:1px solid #e2e8f0;border-radius:10px;padding:16px;transition:border-color .2s,box-shadow .2s}
+.proj-card:hover{border-color:#bfdbfe;box-shadow:0 4px 20px rgba(59,130,246,.08)}
+.proj-card.wide{grid-column:1/-1}
+.proj-yr{font-size:.75rem;font-weight:700;color:#3b82f6;margin-bottom:4px}
+.proj-name{font-size:.92rem;font-weight:700;color:#0f172a;margin-bottom:6px}
+.proj-desc{font-size:.83rem;color:#64748b;line-height:1.55;margin-bottom:10px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px}
+.proj-tag{background:#eff6ff;border:1px solid #dbeafe;color:#1d4ed8;padding:2px 9px;border-radius:999px;font-size:.75rem;font-weight:600}
 
-/* ── Education & more ── */
-.edu-list{list-style:none}
-.edu-list li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
-.edu-list li:last-child{border-bottom:0}
-.edu-name{font-weight:600;color:#e2e8f0;font-size:.95rem}
-.edu-detail{color:#475569;font-size:.85rem}
-.info-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:24px}
-.info-chip{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:10px 16px;font-size:.88rem;color:#94a3b8}
-.info-chip strong{color:#e2e8f0;display:block;font-size:.8rem;margin-bottom:2px;text-transform:uppercase;letter-spacing:.5px;color:#38bdf8}
+/* Education */
+.edu-item{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f8fafc;flex-wrap:wrap;gap:6px}
+.edu-item:last-child{border-bottom:0}
+.edu-n{font-weight:600;font-size:.92rem;color:#0f172a}
+.edu-d{font-size:.82rem;color:#94a3b8;margin-top:2px}
+.edu-yr{font-size:.82rem;color:#94a3b8;white-space:nowrap}
 
-/* ── Contact strip ── */
-.contact{background:linear-gradient(120deg,rgba(14,116,144,.15),rgba(99,102,241,.15));border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:60px 0;text-align:center}
-.contact h2{font-size:1.7rem;font-weight:800;color:#fff;margin-bottom:10px}
-.contact p{color:#64748b;margin-bottom:24px}
-
-/* ── Footer ── */
-footer{text-align:center;color:#1e293b;font-size:.85rem;padding:24px;background:#070c18}
-footer a{color:#334155}
-
-/* ── Responsive ── */
-@media(max-width:700px){
-  .about-grid,.projects-grid,.skills-grid{grid-template-columns:1fr}
-  .nav-links{gap:14px}
-  .hero h1{font-size:2rem}
-  .sec-title{font-size:1.5rem}
-}
-
-/* ── Print ── */
-@media print{
-  body{background:#fff;color:#000}
-  nav,scroll-hint,.hero-btns .btn-outline,.contact,.hero::before{display:none}
-  .hero{background:#fff;color:#000;min-height:auto;padding:20px 0 10px}
-  .hero h1,.hero h1 span{color:#000;-webkit-text-fill-color:#000}
-  .hero-sub,.hero-stack{color:#444}
-  .hero-badge{display:none}
-  .sec{padding:24px 0}
-  .proj-card{border:1px solid #ccc;break-inside:avoid}
-  .tl-item{break-inside:avoid}
-}
+@media(max-width:800px){.page{grid-template-columns:1fr;margin:0;border-radius:0}aside{padding:28px 20px}main{padding:28px 20px}.proj-grid{grid-template-columns:1fr}.proj-card.wide{grid-column:1}}
+@media print{.page{box-shadow:none;margin:0;border-radius:0;max-width:100%}aside{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
+<div class="page">
 
-<!-- NAV -->
-<nav>
-  <span class="nav-logo">Tarun Verma</span>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="av">TV</div>
+    <h1>Tarun Verma</h1>
+    <div class="role">Full Stack Developer<br>at AppQuell Technologies</div>
 
-<!-- HERO -->
-<header class="hero">
-  <div>
-    <div class="hero-badge">Available for work · Chandigarh / Mohali</div>
-    <h1>Hi, I'm <span>Tarun Verma</span></h1>
-    <p class="hero-sub">Full Stack Developer at AppQuell Technologies with 4+ years building web applications used by law firms across the USA.</p>
-    <p class="hero-stack">Laravel · PHP · React.js · WordPress · MySQL</p>
-    <div class="hero-btns">
-      <a class="btn-primary" href="#projects">View Projects</a>
-      <a class="btn-outline" href="https://www.linkedin.com/in/tarun951" target="_blank">LinkedIn Profile</a>
-      <button class="btn-outline" onclick="window.print()">Download Resume</button>
+    <div class="aside-sec">
+      <h3>Contact</h3>
+      <a class="aside-link" href="https://www.linkedin.com/in/tarun951" target="_blank"><span class="ico">in</span>linkedin.com/in/tarun951</a>
+      <a class="aside-link" href="https://tarunverma959.github.io" target="_blank"><span class="ico">🌐</span>tarunverma959.github.io</a>
+      <div class="aside-link"><span class="ico">📍</span>Kharar, Punjab, India</div>
     </div>
-    <p class="scroll-hint">↓ scroll</p>
-  </div>
-</header>
 
-<!-- ABOUT -->
-<section class="sec" id="about">
-  <div class="container">
-    <p class="sec-label">About Me</p>
-    <h2 class="sec-title">Who I Am</h2>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I'm a Full Stack Developer based in Kharar, Punjab, India. Since joining AppQuell Technologies in May 2022, I have progressed from Frontend Developer to Backend Developer to Full Stack Developer — working on client and company products used by law firms across the USA.</p>
-        <p>My primary focus is building web applications with Laravel, PHP, React.js, and MySQL — from multi-step client questionnaires and attorney dashboards to document workflows, PDF generation, OCR extraction, and third-party API integrations (Plaid, Laravel Passport, PDFtk).</p>
-        <p>I am open to Full Stack Developer, Software Developer, Laravel Developer, PHP Developer, and Web Developer roles.</p>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-item">PHP</div>
-        <div class="skill-item">Laravel</div>
-        <div class="skill-item">JavaScript</div>
-        <div class="skill-item">React.js</div>
-        <div class="skill-item">MySQL</div>
-        <div class="skill-item">WordPress</div>
-        <div class="skill-item">HTML / CSS</div>
-        <div class="skill-item">Git</div>
-        <div class="skill-item">REST APIs</div>
-        <div class="skill-item">Android Studio</div>
-        <div class="skill-item">Adobe Photoshop</div>
-        <div class="skill-item">PhpMyAdmin</div>
+    <div class="aside-sec">
+      <h3>Core Skills</h3>
+      <span class="sk-pill">PHP</span><span class="sk-pill">Laravel</span><span class="sk-pill">JavaScript</span><span class="sk-pill">React.js</span><span class="sk-pill">MySQL</span><span class="sk-pill">WordPress</span><span class="sk-pill">HTML / CSS</span><span class="sk-pill">Git</span><span class="sk-pill">REST APIs</span><span class="sk-pill">Android Studio</span>
+    </div>
+
+    <div class="aside-sec">
+      <h3>Education</h3>
+      <div style="font-size:.87rem;color:rgba(255,255,255,.85);margin-bottom:4px;font-weight:600">Punjab Technical University</div>
+      <div style="font-size:.8rem;color:rgba(255,255,255,.6)">B.Tech, CS · 2015–2019 · 7.59 CGPA</div>
+    </div>
+
+    <div class="aside-sec">
+      <h3>Languages</h3>
+      <div class="lang-item">English<span class="lang-level">Professional working</span></div>
+      <div class="lang-item">Hindi<span class="lang-level">Native</span></div>
+      <div class="lang-item">Punjabi<span class="lang-level">Native</span></div>
+    </div>
+
+    <div class="avail-badge">✦ Open to Work<br><span style="font-weight:400;font-size:.75rem">Chandigarh / Mohali</span></div>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="main-sec">
+      <div class="ms-label">About</div>
+      <div class="ms-title">Full Stack Developer</div>
+      <p class="hero-intro">Software Developer with 4+ years of experience building web applications for clients and company products. My core work is in PHP, Laravel, React.js, WordPress, HTML, CSS, and MySQL. At AppQuell Technologies since May 2022, I progressed from Frontend → Backend → Full Stack Developer, working on bankruptcy case-management SaaS platforms used by law firms across the USA — building client questionnaires, attorney dashboards, document workflows, PDF generation, and third-party API integrations.</p>
+    </div>
+
+    <div class="main-sec">
+      <div class="ms-label">Work History</div>
+      <div class="ms-title">Experience</div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-co">AppQuell Technologies</div>
+          <div class="tl-role">Full Stack Developer</div>
+          <div class="tl-date">Jan 2024 – Present · Full-time · Kharar (On-site)</div>
+          <ul class="tl-list"><li>Full-stack applications in Laravel, PHP, React.js and MySQL for law-firm SaaS platforms</li><li>Admin dashboards, backend features and database-driven modules</li><li>Frontend with React.js, HTML, CSS; WordPress websites for clients</li></ul>
+          <div class="tl-tech">PHP · Laravel · React.js · WordPress · MySQL · Git · Android Studio</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-co">AppQuell Technologies</div>
+          <div class="tl-role">Backend Developer</div>
+          <div class="tl-date">Dec 2022 – Dec 2023</div>
+          <ul class="tl-list"><li>Backend features and admin dashboards in Laravel</li><li>MySQL databases and PhpMyAdmin; dashboard modules</li></ul>
+          <div class="tl-tech">PHP · Laravel · MySQL · PhpMyAdmin</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-co">AppQuell Technologies</div>
+          <div class="tl-role">Frontend Developer</div>
+          <div class="tl-date">May 2022 – Nov 2022</div>
+          <ul class="tl-list"><li>Frontend layouts in HTML/CSS; visual designs with Adobe Photoshop</li></ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-co">Chegg India</div>
+          <div class="tl-role">Subject Matter Expert</div>
+          <div class="tl-date">Feb 2021 – May 2022 · Freelance</div>
+          <ul class="tl-list"><li>Answered student questions as a freelance subject matter expert</li></ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<hr class="divider">
+    <div class="main-sec" id="projects">
+      <div class="ms-label">What I've Built</div>
+      <div class="ms-title">Projects</div>
+      <div class="proj-grid">
 
-<!-- EXPERIENCE -->
-<section class="sec" id="experience">
-  <div class="container">
-    <p class="sec-label">Work History</p>
-    <h2 class="sec-title">Experience</h2>
-    <div class="timeline">
+        <div class="proj-card">
+          <div class="proj-yr">2026 – Present</div>
+          <div class="proj-name">MatterVanta — Bankruptcy Case Management Platform</div>
+          <div class="proj-desc">MatterVanta is a bankruptcy case-management platform built for law firms that brings the entire case workflow — questionnaires, document collection, OCR extraction, client communication and attorney review — into one guided workspace. I built most of this platform at AppQuell Technologies. Key work includes building the client questionnaire and intake forms, attorney review workflows, document collection with version history and combined PDFs, OCR-based autofill that reads financial PDFs and populates questionnaire fields automatically, petition preparation, attorney–client chat and text messaging, Plaid and credit report imports, paystub management, case data exports to Jubilee bankruptcy software, and official form generation using PDFtk.</div>
+          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">React.js</span><span class="proj-tag">Plaid API</span><span class="proj-tag">PDFtk</span><span class="proj-tag">OCR</span><span class="proj-tag">REST APIs</span></div>
+        </div>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-company">AppQuell Technologies</div>
-        <div class="tl-role">Full Stack Developer</div>
-        <div class="tl-date">Jan 2024 – Present · Full-time · Kharar, Punjab, India (On-site)</div>
-        <ul class="tl-list">
-          <li>Building full-stack applications in Laravel, PHP, React.js and MySQL for bankruptcy case-management SaaS platforms used by law firms</li>
-          <li>Developing admin dashboards, backend features and database-driven modules</li>
-          <li>Building frontend interfaces with React.js, HTML, CSS and JavaScript</li>
-          <li>Building and updating WordPress websites for clients</li>
-          <li>Also worked on Android app development when the project required it</li>
-        </ul>
-        <div class="tl-tech">PHP · Laravel · React.js · WordPress · JavaScript · HTML · CSS · MySQL · Git · Android Studio</div>
+        <div class="proj-card">
+          <div class="proj-yr">Jun 2022 – Present</div>
+          <div class="proj-name">BK Questionnaire (BK Assistant) — Bankruptcy SaaS</div>
+          <div class="proj-desc">BK Questionnaire is a bankruptcy case-management platform used by law firms for client intake and case preparation. I have been one of its main developers since 2022. My work covers the full multi-tab client questionnaire (Basic Info, Property, Income, Debts, Expenses, Financial Affairs), attorney dashboards, client and case management, document collection and upload flows, paystub and paycheck calculations, PDF generation using PDFtk to fill official and local court forms, case data exports to Jubilee and Best Case bankruptcy software, Plaid API integration for bank account and transaction imports, one-page intake forms attorneys share with clients, document scanning and OCR tools, Excel/CSV imports, email notifications, and admin/concierge management.</div>
+          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">Bootstrap</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Laravel Passport</span><span class="proj-tag">Plaid API</span><span class="proj-tag">PDFtk</span></div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-yr">Jun 2025 – Present</div>
+          <div class="proj-name">Parking Management System with License Plate OCR</div>
+          <div class="proj-desc">A vehicle parking management system built for a client, covering the full parking flow — adding vehicles, marking them in and out, listing all active and past vehicles, search and filter, event-based parking, a live dashboard, and Excel export for reports. A key feature is automated license-plate recognition: initially built using Tesseract OCR, later upgraded to a Python-based API service using YOLOv8 + OpenCV for plate detection and EasyOCR for reading the text, making it accurate on real-world vehicle photos.</div>
+          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Python</span><span class="proj-tag">YOLOv8</span><span class="proj-tag">OpenCV</span><span class="proj-tag">EasyOCR</span><span class="proj-tag">Tesseract</span></div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-yr">Jun 2022 – Present</div>
+          <div class="proj-name">RSSB Management System — Sewadar & Schedule Management</div>
+          <div class="proj-desc">An internal management system for RSSB (Radha Soami Satsang Beas) to manage sewadar (volunteer) scheduling and records. The system handles duty schedules, nominal rolls, attendance reports, centers and area management, vehicle and driver assignments, and tools for syncing sewadar records and merging duplicate entries. Built to replace manual processes and make schedule management faster and more reliable for coordinators.</div>
+          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Bootstrap</span></div>
+        </div>
+
+        <div class="proj-card wide">
+          <div class="proj-yr">May 2022 – Present</div>
+          <div class="proj-name">Client Projects — WordPress, Laravel &amp; React</div>
+          <div class="proj-desc">Various client websites and web applications built over the years at AppQuell Technologies. Work includes building and customizing WordPress websites, developing Laravel-based web applications with admin panels and database features, and building React.js interfaces. Projects range from business websites and landing pages to custom web tools. Client and project names are not publicly listed.</div>
+          <div class="proj-tags"><span class="proj-tag">WordPress</span><span class="proj-tag">Laravel</span><span class="proj-tag">React.js</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">HTML/CSS</span></div>
+        </div>
+
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-company">AppQuell Technologies</div>
-        <div class="tl-role">Backend Developer</div>
-        <div class="tl-date">Dec 2022 – Dec 2023</div>
-        <ul class="tl-list">
-          <li>Developed backend features and admin dashboards in Laravel</li>
-          <li>Worked with MySQL databases and PhpMyAdmin for data management</li>
-          <li>Built dashboard modules for managing application content and users</li>
-        </ul>
-        <div class="tl-tech">PHP · Laravel · MySQL · PhpMyAdmin</div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-company">AppQuell Technologies</div>
-        <div class="tl-role">Frontend Developer</div>
-        <div class="tl-date">May 2022 – Nov 2022</div>
-        <ul class="tl-list">
-          <li>Designed and built frontend layouts using HTML and CSS</li>
-          <li>Created visual designs and graphics with Adobe Photoshop</li>
-        </ul>
-        <div class="tl-tech">HTML · CSS · Adobe Photoshop</div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot" style="border-color:#475569"></div>
-        <div class="tl-company" style="color:#475569">Chegg India</div>
-        <div class="tl-role">Subject Matter Expert</div>
-        <div class="tl-date">Feb 2021 – May 2022 · Freelance</div>
-        <ul class="tl-list">
-          <li>Answered student questions as a freelance subject matter expert on Chegg</li>
-        </ul>
-      </div>
-
     </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- PROJECTS -->
-<section class="sec" id="projects">
-  <div class="container">
-    <p class="sec-label">What I've Built</p>
-    <h2 class="sec-title">Projects</h2>
-    <div class="projects-grid">
-
-      <div class="proj-card">
-        <div class="proj-year">2026 – Present</div>
-        <div class="proj-name">MatterVanta — Bankruptcy Case Management</div>
-        <div class="proj-desc">Bankruptcy case-management platform for law firms bringing questionnaires, document collection, OCR extraction, client communication and attorney review into one workspace. Built most of the platform at AppQuell Technologies: intake workflows, OCR autofill from financial PDFs, petition prep, attorney–client chat/text, Plaid imports, PDFtk form generation.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Plaid API</span><span class="proj-tag">PDFtk</span>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-year">Jun 2022 – Present</div>
-        <div class="proj-name">BK Questionnaire — Bankruptcy SaaS</div>
-        <div class="proj-desc">Bankruptcy case-management platform used by law firms for client intake and case preparation. One of its main developers since 2022: multi-tab questionnaire, attorney dashboards, document workflows, paystub calculations, PDFtk form filling, Jubilee/Best Case imports, Plaid API integration.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">Bootstrap</span><span class="proj-tag">Laravel Passport</span><span class="proj-tag">PDFtk</span>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-year">Jun 2025 – Present</div>
-        <div class="proj-name">Parking Management with License Plate OCR</div>
-        <div class="proj-desc">Vehicle parking management — add / mark-in / mark-out, listings, events, dashboard and Excel export. License-plate recognition using Tesseract, later upgraded to Python YOLOv8 + OpenCV + EasyOCR API.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">YOLOv8</span><span class="proj-tag">OCR</span>
-        </div>
-      </div>
-
-      <div class="proj-card">
-        <div class="proj-year">Jun 2022 – Present</div>
-        <div class="proj-name">RSSB — Sewadar & Schedule Management</div>
-        <div class="proj-desc">Volunteer (sewadar) scheduling and management system: schedules, nominal rolls, reports, centers / areas, vehicles and drivers, sewadar sync and duplicate merge.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span>
-        </div>
-      </div>
-
-      <div class="proj-card" style="grid-column:1/-1">
-        <div class="proj-year">May 2022 – Present</div>
-        <div class="proj-name">Client Projects — WordPress, Laravel &amp; React</div>
-        <div class="proj-desc">Client websites and web applications built with WordPress, Laravel and React.js. Client and project names are not publicly listed.</div>
-        <div class="proj-tags">
-          <span class="proj-tag">WordPress</span><span class="proj-tag">Laravel</span><span class="proj-tag">React.js</span><span class="proj-tag">PHP</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- EDUCATION -->
-<section class="sec" id="education">
-  <div class="container">
-    <p class="sec-label">Background</p>
-    <h2 class="sec-title">Education</h2>
-    <ul class="edu-list">
-      <li>
-        <div>
-          <div class="edu-name">Punjab Technical University</div>
-          <div class="edu-detail">B.Tech — Computer Science · 7.59 CGPA</div>
-        </div>
-        <span class="edu-detail">2015 – 2019</span>
-      </li>
-      <li>
-        <div>
-          <div class="edu-name">Govt. Model Sr. Secondary School</div>
-          <div class="edu-detail">12th — Non-Medical</div>
-        </div>
-        <span class="edu-detail">2014 – 2015</span>
-      </li>
-      <li>
-        <div>
-          <div class="edu-name">Sant Isher Singh Public School</div>
-          <div class="edu-detail">10th</div>
-        </div>
-        <span class="edu-detail">2012 – 2013</span>
-      </li>
-    </ul>
-
-    <div class="info-row">
-      <div class="info-chip"><strong>Languages</strong>English · Hindi · Punjabi</div>
-      <div class="info-chip"><strong>Certifications</strong>Game Designing (MAAC) · Web Designing (Technospecs) · Android Technology (CS Soft)</div>
-      <div class="info-chip"><strong>Location</strong>Kharar, Punjab, India</div>
-      <div class="info-chip"><strong>Open to Work</strong>Chandigarh &amp; Mohali</div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<div class="contact" id="contact">
-  <div class="container">
-    <h2>Let's Connect</h2>
-    <p>Open to Full Stack, Laravel, PHP, and Web Developer roles in Chandigarh / Mohali</p>
-    <a class="btn-primary" href="https://www.linkedin.com/in/tarun951" target="_blank">Message me on LinkedIn</a>
-  </div>
+  </main>
 </div>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Tarun Verma · <a href="https://tarunverma959.github.io">tarunverma959.github.io</a>
-</footer>
-
 </body>
 </html>
