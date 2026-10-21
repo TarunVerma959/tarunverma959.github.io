@@ -79,8 +79,10 @@ main{background:#fff;padding:44px 40px;overflow:auto}
 .action-btns{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
 .btn-li{background:#0a66c2;color:#fff;padding:9px 20px;border-radius:7px;font-weight:600;font-size:.88rem;display:inline-block;transition:background .2s}
 .btn-li:hover{background:#085196;text-decoration:none;color:#fff}
-.btn-dl{background:#f1f5f9;color:#0f172a;padding:8px 18px;border-radius:7px;font-weight:600;font-size:.88rem;border:1.5px solid #e2e8f0;cursor:pointer;display:inline-block;transition:background .2s,border-color .2s}
-.btn-dl:hover{background:#e2e8f0;border-color:#cbd5e1;text-decoration:none}
+.btn-print{background:#fff;color:#0f172a;padding:8px 18px;border-radius:7px;font-weight:600;font-size:.88rem;border:1.5px solid #e2e8f0;cursor:pointer;display:inline-block;transition:background .2s,border-color .2s}
+.btn-print:hover{background:#f1f5f9;border-color:#cbd5e1}
+.btn-dl{background:#0f172a;color:#fff;padding:9px 20px;border-radius:7px;font-weight:600;font-size:.88rem;border:none;cursor:pointer;display:inline-block;transition:background .2s}
+.btn-dl:hover{background:#1e293b;text-decoration:none;color:#fff}
 .proj-tags{display:flex;flex-wrap:wrap;gap:4px}
 .proj-tag{background:#eff6ff;border:1px solid #dbeafe;color:#1d4ed8;padding:2px 9px;border-radius:999px;font-size:.75rem;font-weight:600}
 
@@ -91,7 +93,7 @@ main{background:#fff;padding:44px 40px;overflow:auto}
 .edu-d{font-size:.82rem;color:#94a3b8;margin-top:2px}
 .edu-yr{font-size:.82rem;color:#94a3b8;white-space:nowrap}
 
-@media(max-width:800px){.page{grid-template-columns:1fr;margin:0;border-radius:0}aside{padding:28px 20px}main{padding:28px 20px}.proj-grid{grid-template-columns:1fr}.proj-card.wide{grid-column:1}}
+@media(max-width:650px){.page{grid-template-columns:1fr;margin:0;border-radius:0}aside{padding:28px 20px}main{padding:28px 20px}.proj-grid{grid-template-columns:1fr}.proj-card.wide{grid-column:1}}
 @media print{
   .page{box-shadow:none;margin:0;border-radius:0;max-width:100%;grid-template-columns:260px 1fr}
   aside{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:28px 20px}
@@ -165,7 +167,8 @@ main{background:#fff;padding:44px 40px;overflow:auto}
       <p class="hero-intro">Software Developer with 4+ years of experience building web applications for clients and company products. My core work is in PHP, Laravel, React.js, WordPress, HTML, CSS, and MySQL. At AppQuell Technologies since May 2022, I progressed from Frontend → Backend → Full Stack Developer, working on bankruptcy case-management SaaS platforms used by law firms across the USA.</p>
       <div class="action-btns">
         <a class="btn-li" href="https://www.linkedin.com/in/tarun951" target="_blank">Connect on LinkedIn</a>
-        <button class="btn-dl" onclick="window.print()">Download Resume</button>
+        <button class="btn-print" onclick="window.print()">🖨 Print</button>
+        <a class="btn-dl" href="portfolio.pdf" download="Tarun-Verma-Resume.pdf">⬇ Download Resume</a>
       </div>
     </div>
 
