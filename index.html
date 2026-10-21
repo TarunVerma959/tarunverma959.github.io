@@ -5,6 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarun Verma — Full Stack Developer</title>
+<meta name="description" content="Tarun Verma — Full Stack Developer with 4+ years of experience in PHP, Laravel, React.js, MySQL and WordPress. Open to work in Chandigarh / Mohali.">
+<meta property="og:title" content="Tarun Verma — Full Stack Developer">
+<meta property="og:description" content="Software Developer with 4+ years experience in PHP, Laravel, React.js and MySQL. Open to new opportunities in Chandigarh / Mohali.">
+<meta property="og:url" content="https://tarunverma959.github.io">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231e40af'/><text y='68' font-size='46' x='50' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-weight='900'>TV</text></svg>">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.65;min-height:100vh}
@@ -26,7 +32,13 @@ aside .role{font-size:.88rem;opacity:.85;font-weight:500;margin-bottom:20px;line
 .sk-pill{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:5px 12px;border-radius:6px;font-size:.82rem;font-weight:600;margin:3px 3px 0 0}
 .lang-item{font-size:.87rem;color:rgba(255,255,255,.8);margin-bottom:6px}
 .lang-level{font-size:.75rem;color:rgba(255,255,255,.5);display:block}
-.avail-badge{margin-top:14px;margin-bottom:0;background:rgba(34,197,94,.2);border:1px solid rgba(34,197,94,.4);color:#86efac;padding:10px 14px;border-radius:8px;font-size:.82rem;text-align:center;font-weight:600}
+.avail-badge{margin:16px -28px 0;background:linear-gradient(90deg,#15803d 0%,#16a34a 50%,#15803d 100%);padding:11px 28px;display:flex;align-items:center;gap:10px;position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 3px 10px rgba(0,0,0,.25)}
+.avail-badge::before,.avail-badge::after{content:'';position:absolute;bottom:-7px;width:0;height:0;border-top:7px solid #14532d}
+.avail-badge::before{left:0;border-left:7px solid transparent}
+.avail-badge::after{right:0;border-right:7px solid transparent}
+.avail-badge .otw-dot{width:9px;height:9px;border-radius:50%;background:#bbf7d0;flex-shrink:0;box-shadow:0 0 0 3px rgba(187,247,208,.25)}
+.avail-badge .otw-line1{font-size:.84rem;font-weight:800;color:#fff;display:block;line-height:1.2;letter-spacing:.2px}
+.avail-badge .otw-line2{font-size:.78rem;color:#fff;opacity:.92;display:block;margin-top:2px;font-weight:500;letter-spacing:.2px}
 .cert-item{font-size:.8rem;color:rgba(255,255,255,.7);margin-bottom:5px;padding-left:12px;position:relative}
 .cert-item::before{content:'◆';position:absolute;left:0;top:4px;font-size:.45rem;color:#93c5fd}
 
@@ -80,7 +92,16 @@ main{background:#fff;padding:44px 40px;overflow:auto}
 .edu-yr{font-size:.82rem;color:#94a3b8;white-space:nowrap}
 
 @media(max-width:800px){.page{grid-template-columns:1fr;margin:0;border-radius:0}aside{padding:28px 20px}main{padding:28px 20px}.proj-grid{grid-template-columns:1fr}.proj-card.wide{grid-column:1}}
-@media print{.page{box-shadow:none;margin:0;border-radius:0;max-width:100%}aside{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media print{
+  .page{box-shadow:none;margin:0;border-radius:0;max-width:100%;grid-template-columns:260px 1fr}
+  aside{-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:28px 20px}
+  .avail-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact;margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px}
+  .action-btns{display:none}
+  .proj-card{break-inside:avoid}
+  .tl-item{break-inside:avoid}
+  main{padding:28px 32px}
+  a{color:inherit;text-decoration:none}
+}
 </style>
 </head>
 <body>
@@ -92,10 +113,18 @@ main{background:#fff;padding:44px 40px;overflow:auto}
     <h1>Tarun Verma</h1>
     <div class="role">Full Stack Developer<br>at AppQuell Technologies</div>
 
-    <div class="avail-badge">✦ Open to Work<br><span style="font-weight:400;font-size:.75rem">Chandigarh / Mohali</span></div>
+    <div class="avail-badge">
+      <div class="otw-dot"></div>
+      <div>
+        <span class="otw-line1">Open to Work</span>
+        <span class="otw-line2">Chandigarh / Mohali</span>
+      </div>
+    </div>
 
     <div class="aside-sec">
       <h3>Contact</h3>
+      <a class="aside-link" href="mailto:tarunverma951@gmail.com"><span class="ico">✉</span>tarunverma951@gmail.com</a>
+      <a class="aside-link" href="tel:+919988843643"><span class="ico">📞</span>+91 99888 43643</a>
       <a class="aside-link" href="https://www.linkedin.com/in/tarun951" target="_blank"><span class="ico">in</span>linkedin.com/in/tarun951</a>
       <a class="aside-link" href="https://tarunverma959.github.io" target="_blank"><span class="ico">🌐</span>tarunverma959.github.io</a>
       <div class="aside-link"><span class="ico">📍</span>Kharar, Punjab, India</div>
