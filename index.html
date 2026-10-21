@@ -59,6 +59,14 @@ main{background:#fff;padding:44px 40px;overflow:auto}
 .proj-yr{font-size:.75rem;font-weight:700;color:#3b82f6;margin-bottom:4px}
 .proj-name{font-size:.92rem;font-weight:700;color:#0f172a;margin-bottom:6px}
 .proj-desc{font-size:.83rem;color:#64748b;line-height:1.55;margin-bottom:10px}
+.proj-list{list-style:none;margin-bottom:10px}
+.proj-list li{font-size:.84rem;color:#475569;padding:2px 0 2px 14px;position:relative;line-height:1.55}
+.proj-list li::before{content:'→';position:absolute;left:0;color:#3b82f6;font-size:.75rem;line-height:1.7}
+.action-btns{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.btn-li{background:#0a66c2;color:#fff;padding:9px 20px;border-radius:7px;font-weight:600;font-size:.88rem;display:inline-block;transition:background .2s}
+.btn-li:hover{background:#085196;text-decoration:none;color:#fff}
+.btn-dl{background:#f1f5f9;color:#0f172a;padding:8px 18px;border-radius:7px;font-weight:600;font-size:.88rem;border:1.5px solid #e2e8f0;cursor:pointer;display:inline-block;transition:background .2s,border-color .2s}
+.btn-dl:hover{background:#e2e8f0;border-color:#cbd5e1;text-decoration:none}
 .proj-tags{display:flex;flex-wrap:wrap;gap:4px}
 .proj-tag{background:#eff6ff;border:1px solid #dbeafe;color:#1d4ed8;padding:2px 9px;border-radius:999px;font-size:.75rem;font-weight:600}
 
@@ -115,7 +123,11 @@ main{background:#fff;padding:44px 40px;overflow:auto}
     <div class="main-sec">
       <div class="ms-label">About</div>
       <div class="ms-title">Full Stack Developer</div>
-      <p class="hero-intro">Software Developer with 4+ years of experience building web applications for clients and company products. My core work is in PHP, Laravel, React.js, WordPress, HTML, CSS, and MySQL. At AppQuell Technologies since May 2022, I progressed from Frontend → Backend → Full Stack Developer, working on bankruptcy case-management SaaS platforms used by law firms across the USA — building client questionnaires, attorney dashboards, document workflows, PDF generation, and third-party API integrations.</p>
+      <p class="hero-intro">Software Developer with 4+ years of experience building web applications for clients and company products. My core work is in PHP, Laravel, React.js, WordPress, HTML, CSS, and MySQL. At AppQuell Technologies since May 2022, I progressed from Frontend → Backend → Full Stack Developer, working on bankruptcy case-management SaaS platforms used by law firms across the USA.</p>
+      <div class="action-btns">
+        <a class="btn-li" href="https://www.linkedin.com/in/tarun951" target="_blank">Connect on LinkedIn</a>
+        <button class="btn-dl" onclick="window.print()">Download Resume</button>
+      </div>
     </div>
 
     <div class="main-sec">
@@ -159,35 +171,69 @@ main{background:#fff;padding:44px 40px;overflow:auto}
         <div class="proj-card">
           <div class="proj-yr">2026 – Present</div>
           <div class="proj-name">MatterVanta — Bankruptcy Case Management Platform</div>
-          <div class="proj-desc">MatterVanta is a bankruptcy case-management platform built for law firms that brings the entire case workflow — questionnaires, document collection, OCR extraction, client communication and attorney review — into one guided workspace. I built most of this platform at AppQuell Technologies. Key work includes building the client questionnaire and intake forms, attorney review workflows, document collection with version history and combined PDFs, OCR-based autofill that reads financial PDFs and populates questionnaire fields automatically, petition preparation, attorney–client chat and text messaging, Plaid and credit report imports, paystub management, case data exports to Jubilee bankruptcy software, and official form generation using PDFtk.</div>
-          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">React.js</span><span class="proj-tag">Plaid API</span><span class="proj-tag">PDFtk</span><span class="proj-tag">OCR</span><span class="proj-tag">REST APIs</span></div>
+          <ul class="proj-list">
+            <li>Built most of the platform at AppQuell Technologies — bankruptcy SaaS used by US law firms</li>
+            <li>Client questionnaire, intake forms and attorney review workflows</li>
+            <li>Document collection with version history, combined PDFs and inbound documents</li>
+            <li>OCR extraction that autofills questionnaire fields from uploaded financial PDFs</li>
+            <li>Petition preparation, attorney–client chat and text messaging</li>
+            <li>Plaid imports, credit report imports and paystub management</li>
+            <li>Case data exports to Jubilee and official form generation using PDFtk</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">React.js</span><span class="proj-tag">Plaid API</span><span class="proj-tag">PDFtk</span><span class="proj-tag">OCR</span></div>
         </div>
 
         <div class="proj-card">
           <div class="proj-yr">Jun 2022 – Present</div>
           <div class="proj-name">BK Questionnaire (BK Assistant) — Bankruptcy SaaS</div>
-          <div class="proj-desc">BK Questionnaire is a bankruptcy case-management platform used by law firms for client intake and case preparation. I have been one of its main developers since 2022. My work covers the full multi-tab client questionnaire (Basic Info, Property, Income, Debts, Expenses, Financial Affairs), attorney dashboards, client and case management, document collection and upload flows, paystub and paycheck calculations, PDF generation using PDFtk to fill official and local court forms, case data exports to Jubilee and Best Case bankruptcy software, Plaid API integration for bank account and transaction imports, one-page intake forms attorneys share with clients, document scanning and OCR tools, Excel/CSV imports, email notifications, and admin/concierge management.</div>
+          <ul class="proj-list">
+            <li>One of the main developers since 2022 — bankruptcy platform used by US law firms</li>
+            <li>Multi-tab client questionnaire: Basic Info, Property, Income, Debts, Expenses, Financial Affairs</li>
+            <li>Attorney dashboards, client and case management features</li>
+            <li>Document collection, upload flows, document progress and review</li>
+            <li>Paystub and paycheck calculations for attorneys</li>
+            <li>PDF generation with PDFtk — official and local court forms, combined PDFs</li>
+            <li>Case data exports to Jubilee and Best Case bankruptcy software</li>
+            <li>Plaid API integration for bank account and transaction imports</li>
+            <li>Intake forms, OCR tools, Excel/CSV imports, email notifications, admin management</li>
+          </ul>
           <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">Bootstrap</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Laravel Passport</span><span class="proj-tag">Plaid API</span><span class="proj-tag">PDFtk</span></div>
         </div>
 
         <div class="proj-card">
           <div class="proj-yr">Jun 2025 – Present</div>
           <div class="proj-name">Parking Management System with License Plate OCR</div>
-          <div class="proj-desc">A vehicle parking management system built for a client, covering the full parking flow — adding vehicles, marking them in and out, listing all active and past vehicles, search and filter, event-based parking, a live dashboard, and Excel export for reports. A key feature is automated license-plate recognition: initially built using Tesseract OCR, later upgraded to a Python-based API service using YOLOv8 + OpenCV for plate detection and EasyOCR for reading the text, making it accurate on real-world vehicle photos.</div>
-          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Python</span><span class="proj-tag">YOLOv8</span><span class="proj-tag">OpenCV</span><span class="proj-tag">EasyOCR</span><span class="proj-tag">Tesseract</span></div>
+          <ul class="proj-list">
+            <li>Full parking flow — add vehicles, mark in/out, listings, search, event-based parking</li>
+            <li>Live dashboard and Excel export for reports</li>
+            <li>Automated license-plate recognition using Tesseract OCR</li>
+            <li>Later upgraded to Python API service using YOLOv8 + OpenCV + EasyOCR for better accuracy on real-world photos</li>
+          </ul>
+          <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Python</span><span class="proj-tag">YOLOv8</span><span class="proj-tag">OpenCV</span><span class="proj-tag">EasyOCR</span></div>
         </div>
 
         <div class="proj-card">
           <div class="proj-yr">Jun 2022 – Present</div>
           <div class="proj-name">RSSB Management System — Sewadar & Schedule Management</div>
-          <div class="proj-desc">An internal management system for RSSB (Radha Soami Satsang Beas) to manage sewadar (volunteer) scheduling and records. The system handles duty schedules, nominal rolls, attendance reports, centers and area management, vehicle and driver assignments, and tools for syncing sewadar records and merging duplicate entries. Built to replace manual processes and make schedule management faster and more reliable for coordinators.</div>
+          <ul class="proj-list">
+            <li>Internal system for RSSB to manage sewadar (volunteer) scheduling and records</li>
+            <li>Duty schedules, nominal rolls and attendance reports</li>
+            <li>Centers and area management, vehicle and driver assignments</li>
+            <li>Tools for syncing sewadar records and merging duplicate entries</li>
+          </ul>
           <div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Bootstrap</span></div>
         </div>
 
         <div class="proj-card wide">
           <div class="proj-yr">May 2022 – Present</div>
           <div class="proj-name">Client Projects — WordPress, Laravel &amp; React</div>
-          <div class="proj-desc">Various client websites and web applications built over the years at AppQuell Technologies. Work includes building and customizing WordPress websites, developing Laravel-based web applications with admin panels and database features, and building React.js interfaces. Projects range from business websites and landing pages to custom web tools. Client and project names are not publicly listed.</div>
+          <ul class="proj-list">
+            <li>Built and customized WordPress websites for various clients</li>
+            <li>Developed Laravel-based web applications with admin panels and database features</li>
+            <li>Built React.js interfaces on Laravel backends</li>
+            <li>Projects range from business websites and landing pages to custom web tools</li>
+            <li>Client and project names are not publicly listed</li>
+          </ul>
           <div class="proj-tags"><span class="proj-tag">WordPress</span><span class="proj-tag">Laravel</span><span class="proj-tag">React.js</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">HTML/CSS</span></div>
         </div>
 
